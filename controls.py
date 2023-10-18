@@ -16,3 +16,4 @@ def events(remchik):
                 remchik.mright = False
             elif event.key == pygame.K_a:
                 remchik.mleft = False
+

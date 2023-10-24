@@ -1,5 +1,6 @@
 import pygame, sys
 
+
 def events(remchik):
     """Обработка событий"""
     for event in pygame.event.get():
@@ -11,9 +12,16 @@ def events(remchik):
                 remchik.mright = True
             elif event.key == pygame.K_a:
                 remchik.mleft = True
+            elif event.key == pygame.K_SPACE:
+                remchik.mjump = True
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_d:
                 remchik.mright = False
             elif event.key == pygame.K_a:
                 remchik.mleft = False
+            elif event.key == pygame.K_SPACE:
+                remchik.mjump = False
+
+
+
 

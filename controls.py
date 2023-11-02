@@ -14,6 +14,8 @@ def events(remchik):
                 remchik.mleft = True
             elif event.key == pygame.K_SPACE:
                 remchik.mjump = True
+            elif event.key == pygame.K_s:
+                remchik.mdown = True
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_d:
                 remchik.mright = False
@@ -21,6 +23,8 @@ def events(remchik):
                 remchik.mleft = False
             elif event.key == pygame.K_SPACE:
                 remchik.mjump = False
+            elif event.key == pygame.K_s:
+                remchik.mdown = False
 
 
 

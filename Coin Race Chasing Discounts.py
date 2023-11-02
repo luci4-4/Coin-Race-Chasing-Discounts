@@ -1,6 +1,6 @@
 import pygame, controls
 
-import jump
+
 from hero import Remchik
 
 def run():
@@ -20,7 +20,7 @@ def run():
         screen.blit(background_image, (0, 0))
         remchik.output()
         pygame.display.flip()
-        jump.jump()
+
 
 
 

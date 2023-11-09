@@ -1,18 +1,15 @@
-import pygame, sys
+import pygame
 
-def events(remchik):
-    """Обработка событий"""
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            sys.exit()
+running_left = [
+    pygame.image.load('image/Running_left/Probnikleft(1).png'),
+    pygame.image.load('image/Running_left/Probnikleft(2).png'),
+    pygame.image.load('image/Running_left/Probnikleft(3).png')
+]
 
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_d:
-                remchik.mright = True
-            elif event.key == pygame.K_a:
-                remchik.mleft = True
-        elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_d:
-                remchik.mright = False
-            elif event.key == pygame.K_a:
-                remchik.mleft = False
+running_right = [
+    pygame.image.load('image/Running_right/Probnikright(1).png'),
+    pygame.image.load('image/Running_right/Probnikright(2).png'),
+    pygame.image.load('image/Running_right/Probnikright(3).png')
+]
+
+player_anim_count = 0

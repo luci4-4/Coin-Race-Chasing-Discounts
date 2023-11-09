@@ -13,3 +13,5 @@ running_right = [
 ]
 
 player_anim_count = 0
+
+x = 0

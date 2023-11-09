@@ -48,3 +48,6 @@ while running:
 
 
     clock.tick(8)
+
+
+x = 0

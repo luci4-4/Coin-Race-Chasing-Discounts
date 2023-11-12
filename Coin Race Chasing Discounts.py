@@ -11,7 +11,7 @@ player_x = 0
 player_y = 450
 
 is_jump = False
-jump_count = 7
+jump_count = 10
 
 
 
@@ -48,7 +48,7 @@ while running:
         if keys[pygame.K_SPACE]:
             is_jump = True
     else:
-        if jump_count >= -7:
+        if jump_count >= -10:
             if jump_count > 0:
                 player_y -= (jump_count ** 2) / 2
             else:
@@ -56,7 +56,7 @@ while running:
             jump_count -= 2
         else:
             is_jump = False
-            jump_count = 7
+            jump_count = 10
 
     if player_anim_count == 2:
         player_anim_count = 0

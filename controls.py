@@ -7,7 +7,7 @@ running_left = [
 ]
 
 running_right = [
-    pygame.image.load('image/Ru'),
+    pygame.image.load('image/Running_right/Probnikright(1).png'),
     pygame.image.load('image/Running_right/Probnikright(2).png'),
     pygame.image.load('image/Running_right/Probnikright(3).png')
 ]

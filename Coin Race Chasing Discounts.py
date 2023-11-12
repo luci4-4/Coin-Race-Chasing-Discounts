@@ -19,7 +19,7 @@ while running:
 
     screen.blit(back_ground, (bg_x, 0))
     screen.blit(back_ground, (bg_x + 1000, 0))
-    screen.blit(running_right[player_anim_count], (0, 450))
+    screen.blit(running_left[player_anim_count], (0, 450))
 
     if player_anim_count == 2:
         player_anim_count = 0
@@ -36,14 +36,6 @@ while running:
         if event.type == pygame.QUIT:
             running = False
             pygame.quit()
-
-    while True:
-        controls.events(remchik)
-        remchik.update_remchik()
-        screen.fill(bg_color)
-        screen.blit(background_image, (0, 0))
-        remchik.output()
-        pygame.display.flip()
 
 
 

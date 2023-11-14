@@ -76,6 +76,6 @@ while running:
 
 
 
-    clock.tick(40)
+    clock.tick(42)
 
 

@@ -1,5 +1,5 @@
 import pygame
 
 
-Remchik = pygame.image.load('image/Probnik.png')
+Remchik = pygame.image.load('image/Remchik.png')
 

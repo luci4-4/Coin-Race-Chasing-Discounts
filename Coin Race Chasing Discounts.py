@@ -29,7 +29,8 @@ pygame.display.set_icon(pygame.image.load('image/Remchik_icon.ico'))
 # ОСНОВНОЙ ЦИКЛ
 while running:
     # ТЕКСТ
-    labal_points = labal_font.render(str(points) + '(20)', False, (0, 100, 0))
+    labal_points = labal_font.render(str(points) + '(10)', False, (0, 100, 0))
+    labal_win = labal_font.render('Well done!', False, (0, 100, 0))
 
     # ВЫВОД НА ЭКРАН
     screen.blit(back_ground, (bg_x, 0))
@@ -96,6 +97,10 @@ while running:
             if Coin_idx.colliderect(player_rect):
                 Coin_list.pop(i)
                 points += 1
+    if points == 10:
+     screen.blit(labal_win, (250, 350))
+
+
 
     pygame.display.update()
 

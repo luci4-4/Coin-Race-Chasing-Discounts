@@ -23,17 +23,18 @@ labal_font = pygame.font.Font('font/SuperMario256.ttf', 40)
 # ЭКРАН
 screen = pygame.display.set_mode((1000, 600))
 pygame.display.set_caption("Coin Race: Chasing Discounts")
-back_ground = pygame.image.load('image/Background(1).jpg').convert_alpha()
+back_ground = pygame.image.load('image/Background.jpg').convert_alpha()
 pygame.display.set_icon(pygame.image.load('image/Remchik_icon.ico'))
 
 # ОСНОВНОЙ ЦИКЛ
 while running:
     # ТЕКСТ
-    labal_points = labal_font.render(str(points) + '(10)', False, (255, 215, 0))
+    labal_points = labal_font.render(str(points) + '(20)', False, (0, 100, 0))
 
     # ВЫВОД НА ЭКРАН
     screen.blit(back_ground, (bg_x, 0))
     screen.blit(back_ground, (bg_x + 1000, 0))
+    screen.blit(back_ground, (bg_x - 1000, 0))
     screen.blit(labal_points, (850, 30))
 
     # СПРАЙТЫ
@@ -52,8 +53,14 @@ while running:
 
     if keys[pygame.K_LEFT] and player_x > 0:
         player_x -= player_speed
+        bg_x += player_speed - 2
+        if bg_x == 1000:
+            bg_x = 0
     elif keys[pygame.K_RIGHT] and player_x < 900:
         player_x += player_speed
+        bg_x -= player_speed - 2
+        if bg_x == -1000:
+            bg_x = 0
     if not is_jump:
         if keys[pygame.K_SPACE]:
             is_jump = True

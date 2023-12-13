@@ -1,4 +1,4 @@
-import pygame, controls, coin, Font
+import pygame
 
 from hero import Remchik, player_speed, player_y, player_x
 from controls import running_left, running_right, player_anim_count
@@ -13,9 +13,22 @@ jump_count = 10
 is_jump = False
 running = True
 
-# ИНИЦИАЛИЗАЦИЯ
+# НАСТРОЙКА МИКШЕРА
+pygame.mixer.pre_init(44100, -16, 1, 512)
 
+# ИНИЦИАЛИЗАЦИЯ
+pygame.init()
 pygame.font.init()
+
+#ФОННОВАЯ МУЗЫКА
+pygame.mixer.music.load("Audio/79bpm.mp3")
+pygame.mixer.music.play(-1)
+pygame.mixer.music.set_volume(0.3)
+
+#ЗВУКИ
+CoinS = pygame.mixer.Sound("Audio/brosok-odnoy-monetki-v-obschuyu-kuchu.mp3")
+FinalS = pygame.mixer.Sound("Audio/zvuk-pobedyi-v-sportivnoy-igre-22991.mp3")
+FinalS.set_volume(0.3)
 
 # ШРИФТ
 labal_font = pygame.font.Font('font/SuperMario256.ttf', 40)
@@ -97,8 +110,11 @@ while running:
             if Coin_idx.colliderect(player_rect):
                 Coin_list.pop(i)
                 points += 1
+                CoinS.play()
     if points == 10:
-     screen.blit(labal_win, (250, 350))
+        screen.blit(labal_win, (250, 350))
+        FinalS.play()
+
 
 
 
@@ -113,6 +129,6 @@ while running:
 
 
 
-    clock.tick(30)
+    clock.tick(45)
 
 
